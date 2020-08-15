@@ -31,7 +31,7 @@ class StartPanel extends React.Component {
                 <div className='App-row'>
                     {this.state.rosary.getMysteries().map(m => 
                         <Link to={{pathname: `/pray/${m.getName()}/${this.state.languageName}/${Rosary.Part.Opening}/0`}}>
-                            <button className='Button' type='button'>
+                            <button className='Button' type='button' style={{width: '120pt'}}>
                                 {m.getName()}
                             </button>
                         </Link>
