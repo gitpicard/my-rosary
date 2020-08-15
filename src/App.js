@@ -8,7 +8,9 @@ class App extends React.Component {
             <>
                 <div className='App'>
                     <header className='App-header'>
-                        <MainPanel/>
+                        <div className='App-panel'>
+                            <MainPanel/>
+                        </div>
                     </header>
                 </div>
             </>

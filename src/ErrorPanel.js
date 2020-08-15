@@ -4,7 +4,7 @@ import './App.css';
 class ErrorPanel extends React.Component {
     render() {
         return (
-            <div className='App-panel'>
+            <div>
                 <h1>
                     Error 404
                 </h1>

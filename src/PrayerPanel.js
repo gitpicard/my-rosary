@@ -87,7 +87,7 @@ class PrayerPanel extends React.Component {
 
     render() {
         return (
-            <div className='App-panel'>
+            <div>
                 <h1>
                     {this.state.title}
                 </h1>

@@ -26,7 +26,7 @@ class AboutPanel extends React.Component {
 
     render() {
         return (
-            <div className='App-panel'>
+            <>
                 <h1>
                     {this.state.about}
                 </h1>
@@ -39,7 +39,7 @@ class AboutPanel extends React.Component {
                         <a href="https://icon54.com/" title="Pixel perfect">
                             Pixel perfect
                         </a>
-                        {this.state.from} &#32
+                        {this.state.from}
                         <a href="https://www.flaticon.com/" title="Flaticon"> 
                             www.flaticon.com
                         </a>
@@ -50,7 +50,7 @@ class AboutPanel extends React.Component {
                         {this.state.back}
                     </button>
                 </Link>
-            </div>
+            </>
         );
     }
 }

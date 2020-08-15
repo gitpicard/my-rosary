@@ -24,7 +24,7 @@ class StartPanel extends React.Component {
 
     render() {
         return (
-            <div className='App-panel'>
+            <div>
                 <h1 style={{margin: '2pt' }}>
                     {this.state.language.title}
                 </h1>
