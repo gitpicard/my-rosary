@@ -53,6 +53,7 @@
 }
 
 .App-link-row {
+    color: black;
     flex-direction: row;
 }
 

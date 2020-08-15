@@ -1,12 +1,112 @@
 {
-    "en-US": {
+    "de": {
+        "title": "Mein Rosenkranz",
+        "cookies": "",
+        "about": "Info",
+        "home": "Startseite",
+        "next": "Nächstes",
+        "back": "Vorheriges",
+        "by": "Von Philip Picard",
+        "iconsBy": "Symbole von",
+        "from": "von",
+        "amen": "Amen.",
+        "today": "Heute:",
+        "mysteries": {
+            "joyful": {
+                "name": "Freudenreichen Geheimnisse",
+                "decades": [
+                    "Die Verkündigung des Erzengles Gabriel an Maria",
+                    "Der Besuch",
+                    "Die Geburt Jesu",
+                    "Jesus wird im Tempel dargebracht",
+                    "Jesus wird im Tempel wiedergefunden"
+                ]
+            },
+            "glorious": {
+                "name": "Glorreichen Geheimnisse",
+                "decades": [
+                    "Die Auferstehung Jesu",
+                    "Die Himmerfahrt Jesu",
+                    "Die Herabkunft des Heiligen Gistes",
+                    "Die Aufnahme Marias",
+                    "Die Krönung Marias"
+                ]
+            },
+            "sorrowful": {
+                "name": "Schmerzhaften Geheimnisse",
+                "decades": [
+                    "Die Todesangst Jesu",
+                    "Die Geißelung Jesu",
+                    "Die Dornenkrünung",
+                    "Jesus trägt das schwere Kreuz",
+                    "Die Kreuzigung Jesu"
+                ]
+            },
+            "luminous": {
+                "name": "Die Lichtreichen Geheimnisse",
+                "decades": [
+                    "Die Taufe im Jordan",
+                    "Die Hochzeit von Kana",
+                    "Die Verkündigung des Reiches Gottes",
+                    "Die Verklärung",
+                    "Die heiligste Eucharistie"
+                ]
+            }
+        },
+        "prayers": {
+            "signOfTheCross": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "apostlesCreed": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "ourFather": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "hailMary": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "gloryBe": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "fatima": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "hailHolyQueen": {
+                "name": "",
+                "text": [
+                ]
+            },
+            "letUsPray": {
+                "name": "",
+                "text": [
+                ]
+            }
+        }
+    },
+    "en": {
         "title": "My Rosary",
         "about": "About",
+        "home": "Home",
         "next": "Next",
         "back": "Back",
         "by": "By Philip Picard",
         "iconsBy": "Icons made by",
         "from": "from",
+        "amen": "Amen.",
+        "today": "Today:",
         "mysteries": {
             "joyful": {
                 "name": "Joyful",
@@ -162,8 +262,6 @@
                     "through the same Christ our Lord."
                 ]
             }
-        },
-        "amen": "Amen.",
-        "today": "Today:"
+        }
     }
 }

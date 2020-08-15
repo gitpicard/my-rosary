@@ -11,13 +11,20 @@ class App extends React.Component {
         // Decide what language to use based on what the browser
         // language is. First, we will need to see if we support
         // that language and if we don't we will revert to English.
-        let langId = (navigator.language in Lang) ? navigator.language : 'en-US'
+        let langId = (navigator.language.split('-')[0] in Lang) ? navigator.language.split('-')[0] : 'en'
         let lang = Lang[langId];
 
         this.state = {
             langId: langId,
             language: lang
         }
+    }
+
+    setLang(l) {
+        this.setState({
+            langId: l,
+            language: Lang[l]
+        });
     }
 
     render() {
@@ -29,8 +36,15 @@ class App extends React.Component {
                             <MainPanel langId={this.state.langId}/>
                         </div>
                         <div className='App-link-row'>
-                            <a href='/about'>{this.state.language.about}</a>
+                            <a className='App-link' href='/'>{this.state.language.home}</a>
+                            |
+                            <a className='App-link' href='/about'>{this.state.language.about}</a>
+                            |
+                            <a className='App-link' href='#' onClick={() => this.setLang('en-US')}>English</a>
+                            |
+                            <a className='App-link' href='#' onClick={() => this.setLang('de')}>German</a>
                         </div>
+                        <p className='App-link'>{this.state.language.cookies}</p>
                     </header>
                 </div>
             </>
