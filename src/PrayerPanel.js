@@ -91,6 +91,14 @@ class PrayerPanel extends React.Component {
                 <h1>
                     {this.state.title}
                 </h1>
+                <div className='App-beads-line'>
+                    {[...Array(this.state.length)].map((e, i) => {
+                        if (i <= this.state.index)
+                            return <img className='App-beads' src={process.env.PUBLIC_URL + '/bead-closed.png'}/>;
+                        else
+                            return <img className='App-beads' src={process.env.PUBLIC_URL + '/bead-open.png'}/>;
+                    })}
+                </div>
                 <div className='App-prayer'>
                     {this.state.text.map(ln =>
                         <li className='App-prayer-line'>{ln}</li>  

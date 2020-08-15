@@ -41,6 +41,16 @@
     font-style: italic;
 }
 
+.App-beads-line {
+    flex-direction: row;
+}
+
+.App-beads {
+    margin: 2pt;
+    width: 16pt;
+    height: 16pt;
+}
+
 .App-credits {
     font-style: italic;
     font-weight: lighter;
