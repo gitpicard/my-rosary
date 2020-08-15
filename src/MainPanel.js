@@ -10,7 +10,7 @@ class MainPanel extends React.Component {
     render() {
         return (
             <>
-                <BrowserRouter>
+                <BrowserRouter forceRefresh={true}>
                     <Switch>
                         <Route path='/' exact component={StartPanel}/>
                         <Route path='/pray/:mystery/:langId/:stage/:index' component={PrayerPanel}/>

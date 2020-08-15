@@ -25,7 +25,8 @@ class PrayerPanel extends React.Component {
     async componentDidMount() {
         // Check if we got routing parameters.
         if (this.props.match.params) {
-            let lang = Lang[this.props.match.params.langId];
+            let langId = this.props.match.params.langId;
+            let lang = Lang[langId];
             let rosary = Rosary.build(lang);
 
             let stage = parseInt(this.props.match.params.stage);
@@ -35,9 +36,9 @@ class PrayerPanel extends React.Component {
 
             this.setState({
                 rosary: rosary,
-                landId: this.props.match.params.langId,
+                langId: langId,
                 language: lang,
-                mystery: this.props.match.mystery,
+                mystery: this.props.match.params.mystery,
                 title: title,
                 text: rosary.getPrayers(stage)[index],
                 amen: lang.amen,
@@ -45,16 +46,11 @@ class PrayerPanel extends React.Component {
                 index: index,
                 length: rosary.getPrayers(stage).length
             });
-
-            console.log(rosary.getPrayers(stage));
         }
     }
 
-    back() {
-    }
-
-    next() {
-        let index = this.state.index + 1;
+    move(offset) {
+        let index = this.state.index + offset;
         let stage = this.state.stage;
 
         // Check if we hit the end of the opening/decade/ending.
@@ -62,9 +58,31 @@ class PrayerPanel extends React.Component {
             index = 0;
             stage++;
         }
+        // Check if we need to move back to a previous part.
+        else if (index < 0) {
+            stage--;
+            if (stage >= 0)
+                index = this.state.rosary.getPrayers(stage).length - 1;
+            // We hit the start of the Rosary again so go back to the home page.
+            else {
+                this.props.history.push('/');
+                return;
+            }
+        }
         // Check if we hit the end of the Rosary.
-        
-        this.props.history.replace(`/pray/${this.state.mystery}/${this.state.langId}/${stage}/${index}`);
+        if (stage > Rosary.Part.Ending)
+            this.props.history.push('/');
+        // Otherwise we can go to the next prayer.
+        else
+            this.props.history.replace(`/pray/${this.state.mystery}/${this.state.langId}/${stage}/${index}`);
+    }
+
+    back() {
+        this.move(-1);
+    }
+
+    next() {
+        this.move(1);
     }
 
     render() {
