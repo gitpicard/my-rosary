@@ -52,7 +52,11 @@
     height: 16pt;
 }
 
-.App-credits {
+.App-link-row {
+    flex-direction: row;
+}
+
+.App-link {
     font-style: italic;
     font-weight: lighter;
     margin: 2pt;

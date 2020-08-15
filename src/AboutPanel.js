@@ -1,27 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
+import Lang from './assets/lang.json';
 
 class AboutPanel extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        
+        let lang = Lang[props.langId];
 
         this.state = {
-            about: '',
-            by: '',
-            iconsBy: '',
-            back: ''
+            about: lang.about,
+            by: lang.by,
+            iconsBy: lang.iconsBy,
+            from: lang.from,
+            back: lang.back
         }
-    }
-
-    componentDidMount() {
-        this.setState({
-            about: this.props.location.state.language.about,
-            by: this.props.location.state.language.by,
-            iconsBy: this.props.location.state.language.iconsBy,
-            from: this.props.location.state.language.from,
-            back: this.props.location.state.language.back
-        });
     }
 
     render() {

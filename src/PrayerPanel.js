@@ -5,12 +5,12 @@ import './App.css';
 
 class PrayerPanel extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
-            landId: 'en-US',
-            language: null,
+            landId: props.langId,
+            language: Lang[props.langId],
             mystery: '',
             title: '',
             text: [],
@@ -25,9 +25,7 @@ class PrayerPanel extends React.Component {
     async componentDidMount() {
         // Check if we got routing parameters.
         if (this.props.match.params) {
-            let langId = this.props.match.params.langId;
-            let lang = Lang[langId];
-            let rosary = Rosary.build(lang);
+            let rosary = Rosary.build(this.state.language);
 
             let stage = parseInt(this.props.match.params.stage);
             let index = parseInt(this.props.match.params.index);
@@ -36,12 +34,10 @@ class PrayerPanel extends React.Component {
 
             this.setState({
                 rosary: rosary,
-                langId: langId,
-                language: lang,
                 mystery: this.props.match.params.mystery,
                 title: title,
                 text: rosary.getPrayers(stage)[index],
-                amen: lang.amen,
+                amen: this.state.language.amen,
                 stage: stage,
                 index: index,
                 length: rosary.getPrayers(stage).length
@@ -74,7 +70,7 @@ class PrayerPanel extends React.Component {
             this.props.history.push('/');
         // Otherwise we can go to the next prayer.
         else
-            this.props.history.replace(`/pray/${this.state.mystery}/${this.state.langId}/${stage}/${index}`);
+            this.props.history.replace(`/pray/${this.state.mystery}/${stage}/${index}`);
     }
 
     back() {
